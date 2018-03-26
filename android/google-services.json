@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "26690723587",
+    "firebase_url": "https://android-badge-demo.firebaseio.com",
+    "project_id": "android-badge-demo",
+    "storage_bucket": "android-badge-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26690723587:android:cf1765842c557a5b",
+        "android_client_info": {
+          "package_name": "ru.itquasar.android_badge_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26690723587-fb7mnghr00popi9dfjbamglvok8de55l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpmi_RKH6wIaqkM89dxcigg14Tx1_u5WE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
