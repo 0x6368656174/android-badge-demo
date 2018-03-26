@@ -31,7 +31,7 @@ dependencies {
 }
 ````
 
-Для работы с данной библиотекой из C++ создан класс `IqAndroidShortcutBadger`, который при помощи QtAndroidExtras вызывает
+Для работы с данной библиотекой из C++ создан класс [https://github.com/0x6368656174/android-badge-demo/blob/master/iqandroidshortcutbadger.h](`IqAndroidShortcutBadger`), который при помощи `QtAndroidExtras` вызывает
 JAVA методы `ShortcutBadger` дря установления и удаления цифры рядом с иконкой.
 
 Собраное приложение можно скачать из Google Play по ссылке 
