@@ -44,8 +44,7 @@ DISTFILES += \
     $$PWD/android/google-services.json \
     $$PWD/android/AndroidManifest.xml \
     $$PWD/android/build.gradle \
-    android/src/ru/itquasar/MyFirebaseMessagingService.java \
-    android/src/ru/itquasar/MyFirebaseInstanceIDService.java
+    android/src/ru/itquasar/MyFirebaseMessagingService.java
 
 # Подключим Firebase
 INCLUDEPATH += $$(FIREBASE_SDK)/include/
