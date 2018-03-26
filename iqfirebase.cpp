@@ -1,28 +1,25 @@
+#define SETTING_CLOUD_MESSAGING_TOKEN "cloudMessagingToken"
+
 #include "iqfirebase.h"
-#include <QtAndroid>
-#include <QAndroidJniObject>
-#include <QDebug>
+#include <QSettings>
 
-IqFirebase::IqFirebase(QObject *parent):
-    QObject(parent),
-    m_jniEnv(new QAndroidJniEnvironment()),
-    m_app(firebase::App::Create(firebase::AppOptions(), *m_jniEnv, QtAndroid::androidActivity().object())),
-    m_listener(new IqFbMessageListener())
-{
-    firebase::messaging::Initialize(*m_app.get(), m_listener.get());
-
-    connect(m_listener.get(), &IqFbMessageListener::tokenReserved, this, &IqFirebase::setMessageToken);
+IqFirebase* IqFirebase::instance() {
+    static IqFirebase* instance = new IqFirebase();
+    return instance;
 }
 
-QString IqFirebase::messageToken() const
+QString IqFirebase::messagingToken() const
 {
-    return m_messageToken;
+    QSettings settings;
+    return settings.value(SETTING_CLOUD_MESSAGING_TOKEN).toString();
 }
 
-void IqFirebase::setMessageToken(const QString &token)
+void IqFirebase::setMessagingToken(const QString &token)
 {
-    if (m_messageToken != token) {
-        m_messageToken = token;
-        emit messageTokenChanged(token);
+    auto old = messagingToken();
+    if (old != token) {
+        QSettings settings;
+        settings.setValue(SETTING_CLOUD_MESSAGING_TOKEN, token);
+        emit messagingTokenChanged(token);
     }
 }

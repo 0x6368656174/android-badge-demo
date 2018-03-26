@@ -26,7 +26,7 @@ ApplicationWindow {
 
         Label {
             text: qsTr('Откройте во браузере ссылку <a href="https://android-badge-demo.firebaseapp.com/send/')
-                  + appFirebase.messageToken + '">https://android-badge-demo.firebaseapp.com/send/' + appFirebase.messageToken
+                  + appFirebase.messagingToken + '">https://android-badge-demo.firebaseapp.com/send/' + appFirebase.messagingToken
                   + '</a> и попробуйте отправить сообщение.'
             wrapMode: Label.WordWrap
             onLinkActivated: Qt.openUrlExternally(link)

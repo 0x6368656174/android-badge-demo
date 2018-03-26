@@ -14,13 +14,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     iqandroidshortcutbadger.cpp \
-    iqfirebase.cpp \
-    iqfbmessagelistener.cpp
+    iqfirebase.cpp
 
 HEADERS += \
     iqandroidshortcutbadger.h \
-    iqfirebase.h \
-    iqfbmessagelistener.h
+    iqfirebase.h
 
 RESOURCES += qml.qrc
 
@@ -36,21 +34,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
-ANDROID_JAVA_SOURCES.path = /src/ru/itquasar
-ANDROID_JAVA_SOURCES.files = $$files($$PWD/*.java)
-INSTALLS += ANDROID_JAVA_SOURCES
 
 DISTFILES += \
     $$PWD/android/google-services.json \
     $$PWD/android/AndroidManifest.xml \
     $$PWD/android/build.gradle \
-    android/src/ru/itquasar/MyFirebaseMessagingService.java
-
-# Подключим Firebase
-INCLUDEPATH += $$(FIREBASE_SDK)/include/
-
-# Слинкуем с C++ библиотеками Firebase Realtime Database и Firebase Cloud Messaging
-LIBS += -L$$(FIREBASE_SDK)/libs/android/armeabi-v7a/c++/ -lmessaging -ldatabase -lapp
-
-
-
+    android/src/ru/itquasar/IqFirebaseInstanceIDService.java \
+    android/src/ru/itquasar/IqFirebaseMessagingService.java

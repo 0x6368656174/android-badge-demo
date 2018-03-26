@@ -62,7 +62,12 @@
         </activity>
 
         <!-- For adding service(s) please check: https://wiki.qt.io/AndroidServices -->
-        <service android:name="ru.itquasar.MyFirebaseMessagingService">
+        <service android:name="ru.itquasar.IqFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="ru.itquasar.IqFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>

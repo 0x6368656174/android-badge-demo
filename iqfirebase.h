@@ -1,31 +1,20 @@
 #ifndef IQFRIEBASE_H
 #define IQFRIEBASE_H
 
-#include <QAndroidJniEnvironment>
-#include <firebase/app.h>
 #include <QObject>
-#include <memory>
-#include "iqfbmessagelistener.h"
 
 class IqFirebase: public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString messageToken READ messageToken NOTIFY messageTokenChanged)
+    Q_PROPERTY(QString messagingToken READ messagingToken NOTIFY messagingTokenChanged)
 public:
-    explicit IqFirebase(QObject *parent = nullptr);
+    static IqFirebase* instance();
 
-    QString messageToken() const;
+    QString messagingToken() const;
+    void setMessagingToken(const QString &token);
 
 signals:
-    void messageTokenChanged(const QString &token) const;
-
-private:
-    std::unique_ptr<QAndroidJniEnvironment> m_jniEnv;
-    std::unique_ptr<firebase::App> m_app;
-    std::unique_ptr<IqFbMessageListener> m_listener;
-
-    QString m_messageToken;
-    void setMessageToken(const QString &token);
+    void messagingTokenChanged(const QString &token) const;
 };
 
 #endif // IQFRIEBASE_H
