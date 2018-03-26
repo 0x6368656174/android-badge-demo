@@ -40,4 +40,5 @@ DISTFILES += \
     $$PWD/android/AndroidManifest.xml \
     $$PWD/android/build.gradle \
     android/src/ru/itquasar/IqFirebaseInstanceIDService.java \
-    android/src/ru/itquasar/IqFirebaseMessagingService.java
+    android/src/ru/itquasar/IqFirebaseMessagingService.java \
+    README.md
