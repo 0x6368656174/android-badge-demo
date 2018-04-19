@@ -12,7 +12,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += main.cpp \
+SOURCES += \
+    main.cpp \
     iqandroidshortcutbadger.cpp \
     iqfirebase.cpp
 
@@ -33,12 +34,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
-
 DISTFILES += \
-    $$PWD/android/google-services.json \
-    $$PWD/android/AndroidManifest.xml \
-    $$PWD/android/build.gradle \
+    android/AndroidManifest.xml \
+    android/res/values/libs.xml \
+    android/build.gradle \
+    android/google-services.json \
     android/src/ru/itquasar/IqFirebaseInstanceIDService.java \
     android/src/ru/itquasar/IqFirebaseMessagingService.java \
     README.md
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
